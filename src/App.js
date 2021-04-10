@@ -1,9 +1,14 @@
 import "./App.css";
+import Header from "./Header";
+import Note from "./Note";
+import Footer from "./Footer";
 
 export default function App() {
   return (
     <div className="App">
-      <header className="App-header">Hello</header>
+      <Header />
+      <Note />
+      <Footer />
     </div>
   );
 }
