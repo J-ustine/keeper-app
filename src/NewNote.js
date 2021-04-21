@@ -13,7 +13,6 @@ export default function NewNote(props) {
     setNote((prevValue) => {
       return { ...prevValue, [name]: value };
     });
-    console.log(note);
   }
   function addNote(event) {
     event.preventDefault();

@@ -8,10 +8,16 @@ import Notes from "./Notes";
 export default function App() {
   const [notes, setNotes] = useState([]);
 
-  console.log(notes);
   function addNote(newNote) {
     setNotes((prevValue) => {
       return [...prevValue, newNote];
+    });
+  }
+  function deleteNote(id) {
+    setNotes((prevValue) => {
+      return prevValue.filter((note, index) => {
+        return index !== id;
+      });
     });
   }
   return (
@@ -24,6 +30,8 @@ export default function App() {
             title={newNotes.title}
             content={newNotes.content}
             key={index}
+            id={index}
+            deleteNote={deleteNote}
           />
         );
       })}
